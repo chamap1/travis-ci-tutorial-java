@@ -28,11 +28,11 @@ pipeline {
 //            }
 //        }
         stage('Compile') {
-            doCompile()
-//            steps {
+            steps {
+                doCompile()                
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
-//            }
+            }
         }
         stage('Deploy') {
             steps {
