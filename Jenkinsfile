@@ -30,7 +30,7 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    def stages = new com.dell.cpsd.continuous-integration.Stages()
+                    def stages = new com.dell.cpsd.SCM.Stages()
                     stages.doCompile()     
                 }
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
