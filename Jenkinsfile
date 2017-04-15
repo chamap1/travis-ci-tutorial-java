@@ -30,7 +30,8 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    Stages.doCompile()     
+                    def stages = new com.dell.cpsd.continuous-integration.Stages()
+                    stages.doCompile()     
                 }
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
