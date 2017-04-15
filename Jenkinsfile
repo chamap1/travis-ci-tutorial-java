@@ -28,7 +28,7 @@ pipeline {
 //            }
 //        }
         stage('Compile') {
-            steps {
+            script {
                 doCompile()                
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
