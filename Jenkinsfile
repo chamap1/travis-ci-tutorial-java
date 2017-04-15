@@ -1,8 +1,4 @@
-properties([
-    pipelineTriggers([
-      upstream(threshold: hudson.model.Result.SUCCESS, upstreamProjects: 'gitorg-test-purna/travis-ci-tutorial-java/master')
-  ])
-])
+@Library('shared-libraries') _
 pipeline {
     agent {
         node{
@@ -32,10 +28,11 @@ pipeline {
 //            }
 //        }
         stage('Compile') {
-            steps {
-                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
-                sh "mvn compile"
-            }
+            doCompile()
+//            steps {
+//                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
+//                sh "mvn compile"
+//            }
         }
         stage('Deploy') {
             steps {
