@@ -13,7 +13,6 @@ pipeline {
                description: 'Name of the dellemc-symphony repository')
     }
     environment {
-        //GIT_CREDS = credentials('github-04')
         GITHUB_TOKEN = credentials('github-04')
     }
     tools {
