@@ -7,11 +7,6 @@ pipeline {
             customWorkspace "workspace/${env.JOB_NAME}"
             }
     }
-    parameters {
-        string(name: 'REPO_NAME', 
-               defaultValue: "${env.JOB_NAME}", 
-               description: 'Name of the dellemc-symphony repository')
-    }
     environment {
         GITHUB_TOKEN = credentials('github-04')
     }
