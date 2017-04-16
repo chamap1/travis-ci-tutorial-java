@@ -1,4 +1,4 @@
-@Library('shared-libraries') _
+//@Library('shared-libraries') _
 pipeline {
     agent {
         node{
@@ -33,7 +33,7 @@ pipeline {
 //                    def stages = new com.dell.cpsd.SCM.Stages()
 //                    stages.doCompile()     
 //                }
-                doCompile
+                doCompile()
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
             }
