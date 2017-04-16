@@ -31,7 +31,7 @@ pipeline {
 //                    stages.doCompile()     
 //                }
                 echo "${params.REPO_NAME}"
-                echo "${env.JOB_NAME}.replaceAll('git-org-test-purna/','').replaceAll('/${BRANCH_NAME}','')"
+                echo "${env.JOB_NAME}\.replaceAll('git-org-test-purna/','')\.replaceAll('/${BRANCH_NAME}','')"
                 doCompile()
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
