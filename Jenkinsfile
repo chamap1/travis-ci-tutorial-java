@@ -9,7 +9,7 @@ pipeline {
     }
     parameters {
         string(name: 'REPO_NAME', 
-               defaultValue: '${env.JOB_NAME}.replaceAll("git-org-test-purna/","").replaceAll("/${BRANCH_NAME}","")', 
+               defaultValue: env.JOB_NAME.replaceAll("git-org-test-purna/","").replaceAll("/${BRANCH_NAME}",""), 
                description: 'Name of the dellemc-symphony repository')
     }
     environment {
