@@ -7,6 +7,11 @@ pipeline {
             customWorkspace "workspace/${env.JOB_NAME}"
             }
     }
+    parameters {
+        string(name: 'REPO_NAME', 
+               defaultValue: '${env.JOB_NAME}.replaceAll("git-org-test-purna/","").replaceAll("/${BRANCH_NAME}","")', 
+               description: 'Name of the dellemc-symphony repository')
+    }
     environment {
         //GIT_CREDS = credentials('github-04')
         GITHUB_TOKEN = credentials('github-04')
@@ -26,6 +31,7 @@ pipeline {
 //                    def stages = new com.dell.cpsd.SCM.Stages()
 //                    stages.doCompile()     
 //                }
+                echo "${params.REPO_NAME}"
                 doCompile()
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
