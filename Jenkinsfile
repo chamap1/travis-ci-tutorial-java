@@ -9,7 +9,7 @@ pipeline {
     }
     parameters {
         string(name: 'REPO_NAME', 
-               defaultValue: "${env.JOB_NAME}.replaceAll("git-org-test-purna/","").replaceAll("/${BRANCH_NAME}","")", 
+               defaultValue: "${env.JOB_NAME}.replaceAll('git-org-test-purna/','').replaceAll('/${BRANCH_NAME}','')", 
                description: 'Name of the dellemc-symphony repository')
     }
     environment {
@@ -32,7 +32,7 @@ pipeline {
 //                    stages.doCompile()     
 //                }
                 echo "${params.REPO_NAME}"
-                echo "${env.JOB_NAME}.replaceAll("git-org-test-purna/","").replaceAll("/${BRANCH_NAME}","")"
+                echo "${env.JOB_NAME}.replaceAll('git-org-test-purna/','').replaceAll('/${BRANCH_NAME}','')"
                 doCompile()
 //                build  job:'gitorg-test-purna/simple-build-for-pipeline-plugin/master', wait: false
 //                sh "mvn compile"
