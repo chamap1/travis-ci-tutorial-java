@@ -9,7 +9,7 @@ pipeline {
     }
     parameters {
         string(name: 'REPO_NAME', 
-               defaultValue: "{env.JOB_NAME}", 
+               defaultValue: "${env.JOB_NAME}", 
                description: 'Name of the dellemc-symphony repository')
     }
     environment {
