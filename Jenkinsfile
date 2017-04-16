@@ -60,6 +60,7 @@ pipeline {
         stage('NexB Scan'){
             steps{
                 doNexbScanning()
+            }
         }
         stage('Github Release'){
             steps{
