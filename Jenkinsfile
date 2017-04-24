@@ -71,7 +71,7 @@ pipeline {
     }
     post{
         always{
-            step([$class: 'WsCleanup'])   
+            cleanWorkspace() 
         }
         success{
             //steps to be performed
