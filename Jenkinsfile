@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh "echo Utils.getRepoName()"
+                sh "echo ${Utils.getRepoName()}"
 //                script {
 //                    def stages = new com.dell.cpsd.SCM.Stages()
 //                    stages.doCompile()     
