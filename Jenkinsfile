@@ -21,7 +21,8 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh "echo ${serverMetaData.getDockerRegistryName()}"
+                sh "echo ${docker.getRegistryName()}"
+                sh "echo ${docker.tag()}"
 //                script {
 //                    def stages = new com.dell.cpsd.SCM.Stages()
 //                    stages.doCompile()     
