@@ -60,8 +60,7 @@ pipeline {
         }
         stage('NexB Scan'){
             steps{
-                sh "echo do nothing"
-//               doNexbScanning()
+               doNexbScanning()
             }
         }
         stage('Github Release'){
