@@ -32,7 +32,7 @@
 				<artifactId>coveralls-maven-plugin</artifactId>
 			    	<version>4.3.0</version>
 				<configuration>
-        				<repoToken>Y69MCO7pZ7f8XmwQ4e0iiKk31iEYGRzjl</repoToken>
+        				<jacocoReports>${project.reporting.outputDirectory}/jacoco/jacoco.xml</jacocoReports>
     				</configuration>
 			</plugin>
 			<plugin>
