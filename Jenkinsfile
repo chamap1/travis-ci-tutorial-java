@@ -47,16 +47,29 @@ pipeline {
                 sh "echo No Integration tests defined for this repo!"
             }
         }
-        stage('SonarQube Analysis') {
-            steps{
-                doSonarAnalysis()
+        parallel firstBranch: {
+            stage('SonarQube Analysis') {
+                steps{
+                    doSonarAnalysis()
+                }
+            }
+        }, secondBranch: {
+            stage('Third Party Audit'){
+                steps{
+                    doThirdPartyAudit()
+                }
             }
         }
-        stage('Third Party Audit'){
-            steps{
-                doThirdPartyAudit()
-            }
-        }
+//        stage('SonarQube Analysis') {
+//            steps{
+//                doSonarAnalysis()
+//            }
+//        }
+//        stage('Third Party Audit'){
+//            steps{
+//                doThirdPartyAudit()
+//            }
+//        }
         stage('NexB Scan'){
             steps{
                doNexbScanning()
