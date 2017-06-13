@@ -47,19 +47,21 @@ pipeline {
                 sh "echo No Integration tests defined for this repo!"
             }
         }
-        parallel firstBranch: {
-            stage('SonarQube Analysis') {
-                steps{
-                    doSonarAnalysis()
+        parallel (
+            firstBranch: {
+                stage('SonarQube Analysis') {
+                    steps{
+                        doSonarAnalysis()
+                    }
+                }
+            }, secondBranch: {
+                stage('Third Party Audit'){
+                    steps{
+                        doThirdPartyAudit()
+                    }
                 }
             }
-        }, secondBranch: {
-            stage('Third Party Audit'){
-                steps{
-                    doThirdPartyAudit()
-                }
-            }
-        }
+        )
 //        stage('SonarQube Analysis') {
 //            steps{
 //                doSonarAnalysis()
