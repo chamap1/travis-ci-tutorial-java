@@ -45,7 +45,7 @@ pipeline {
         }
         stage('Github Release'){
             steps{
-                githubReleaseTest()
+                githubReleaseTest 'create', 'hi', 'hello', 'how are you'
             }
         }
     }
