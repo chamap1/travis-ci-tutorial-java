@@ -45,7 +45,7 @@ pipeline {
         }
         stage('Github Release'){
             steps{
-                sh "echo ${RELEASE_TAG_NAME}"
+                sh "echo hi thi sis ${RELEASE_TAG_NAME}"
                 githubReleaseTest()
             }
         }
