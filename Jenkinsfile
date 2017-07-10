@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Github Release'){
             steps{
-                githubReleaseTest 'vtest', 'hi', 'how are you?'
+                githubReleaseTest 'vtest'
             }
         }
     }
