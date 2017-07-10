@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Github Release'){
             steps{
-                githubReleaseTest(tag_name='vtest')
+                githubReleaseTest(tag_name:'vtest')
             }
         }
     }
