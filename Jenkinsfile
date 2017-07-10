@@ -9,6 +9,9 @@ pipeline {
     }
     environment {
         GITHUB_TOKEN = credentials('github-04')
+        RELEASE_TAG_NAME = 'vtesting'
+        RELEASE_NAME = 'testing'
+        RELEASE_BODY = 'testing'
     }
     tools {
         maven 'linux-maven-3.3.9'
