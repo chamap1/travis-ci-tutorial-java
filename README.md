@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/chamap1/travis-ci-tutorial-java.svg?branch=master)](https://travis-ci.org/chamap1/travis-ci-tutorial-java)
 [![Code Coverage](https://codeship.com/projects/6a681a50-e593-0134-9a54-2a3c530bf09c/status?branch=master)](https://codeship.com/projects/206596)
+[![codecov](https://codecov.io/gh/dellemc-symphony/common-messaging-parent/branch/master/graph/badge.svg)](https://codecov.io/gh/dellemc-symphony/common-messaging-parent)
 # CodeCov
 [![Code Coverage](https://codecov.io/github/chamap1/travis-ci-tutorial-java/coverage.svg)](https://codecov.io/gh/chamap1/travis-ci-tutorial-java)
 # Coveralls
