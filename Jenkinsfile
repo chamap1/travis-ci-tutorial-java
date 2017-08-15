@@ -24,7 +24,11 @@ pipeline {
     stages {
         stage('Travis.yml Lint Check') {
             steps {
-                sh "travis lint"
+                script{
+                    def x = shellDo("travis lint")
+                    println "out: ${x.out} err:${x.err}"
+                
+                }
             }
         }
         stage('Compile') {
