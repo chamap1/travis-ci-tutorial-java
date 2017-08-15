@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script{
                     def x = sh("travis lint")
-                    println "out: ${x.out} err:${x.err}"              
+                    println "err:${x.err}"              
                 }
             }
         }
