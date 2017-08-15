@@ -25,8 +25,9 @@ pipeline {
         stage('Travis.yml Lint Check') {
             steps {
                 script{
-                    def x = sh("travis lint")
-                    println "err:${x.err}"              
+                    def proc = "travis lint".execute();
+                    def outputStream = new StringBuffer();
+                    proc.waitForProcessOutput(outputStream, System.err)           
                 }
             }
         }
