@@ -22,6 +22,11 @@ pipeline {
         timestamps()
     }
     stages {
+        stage('Travis.yml Lint Check') {
+            steps {
+                sh "travis lint"
+            }
+        }
         stage('Compile') {
             steps {
                 doCompile()
