@@ -2,7 +2,7 @@ language: java
 jdk:
  - oraclejdk8
 script:
- - mvn clean compile
+ - mvn  clean compile
  - mvn clean test jacoco:report coveralls:report
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(c url -s https://codecov.io/bash)
