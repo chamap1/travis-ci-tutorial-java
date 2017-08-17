@@ -24,11 +24,7 @@ pipeline {
     stages {
         stage('Travis.yml Lint Check') {
             steps {
-                script{
-                    a = $(travis lint)
-                    sh "echo \$a"
-                }
-                sh "echo \$(travis lint)"
+                sh "travis lint"
             }
         }
         stage('Compile') {
