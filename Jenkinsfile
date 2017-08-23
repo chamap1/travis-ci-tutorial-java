@@ -43,28 +43,7 @@ pipeline {
                 sh "mvn test"
             }
         }
-        stage('NexB Scan') {
-            steps {
-                parallel(
-                "NexB Scan": {
-                    sh 'rm -rf .repo'
-                    doNexbScanning()
-                },
-                "SonarQube Analysis": {
-                    doSonarAnalysis()
-                },
-                "Third Party Audit": {
-                    doThirdPartyAudit()
-                },
-                "PasswordScan": {
-                    doPwScan()
-                },
-                "Github Release": {
-                    githubRelease()
-                }
-                )
-            }
-        }
+     
         stage('Integration Tests') {
             steps {
                 sh "echo No Integration tests defined for this repo!"
