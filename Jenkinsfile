@@ -24,7 +24,8 @@ pipeline {
     stages {
         stage('Travis.yml Lint Check') {
             steps {
-                sh "travis lint -x || echo '.travis.yml does not validate'"
+                sh "travis lint -x"
+                sh "echo $?"
             }
         }
         stage('Compile') {
