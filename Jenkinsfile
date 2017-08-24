@@ -22,9 +22,9 @@ pipeline {
         timestamps()
     }
     stages {
-        stage('Travis.yml Lint Check') {
+        stage('Travis.yml Validation') {
             steps {
-                sh "travis lint -x"
+                doTravisLint()
          //       sh "echo \$?"
             }
         }
